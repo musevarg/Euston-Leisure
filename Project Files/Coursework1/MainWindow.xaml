@@ -1,0 +1,77 @@
+﻿<Window x:Class="Coursework1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coursework1"
+        mc:Ignorable="d"
+        Title="ELM" Height="501.85" Width="1065" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Foreground="White" Background="#FF506EA2" Icon="Res/enveloppe.png">
+
+    <Grid Background="#FF6387C7" Margin="0,0,-6,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="819*"/>
+            <ColumnDefinition Width="21"/>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="74*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="headerTxtBox" HorizontalAlignment="Left" Height="23" Margin="30,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.75"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Euston Leisure Messaging" HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Width="253" FontSize="20" FontWeight="Bold" Height="43" Foreground="#FF1F1451"/>
+        <Label Content="Message Header / ID" HorizontalAlignment="Left" Margin="27,153,0,0" VerticalAlignment="Top" Height="26" Width="121" Foreground="#FF2F2070"/>
+        <Label Content="Message Body" HorizontalAlignment="Left" Margin="30,212,0,0" VerticalAlignment="Top" Width="87" Height="26" Foreground="#FF2F2070"/>
+        <TextBox x:Name="messasgeTxtBox" HorizontalAlignment="Left" Height="126" Margin="27,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.75"/>
+            </TextBox.Background>
+        </TextBox>
+        <Button x:Name="sendBtn" Content="Send" HorizontalAlignment="Left" Margin="27,389,0,0" VerticalAlignment="Top" Width="90" Height="37" Background="#FF2F2070" Foreground="#FF7F96BD" BorderBrush="#FF38404F"/>
+        <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Margin="128,389,0,0" VerticalAlignment="Top" Width="90" Height="37" Background="#FF2F2070" Foreground="#FF7F96BD" BorderBrush="#FF38404F"/>
+        <Label Content="Significant Incident Reports" HorizontalAlignment="Left" Margin="378,18,0,0" VerticalAlignment="Top" Height="26" Width="183" FontSize="13" FontWeight="Bold" Foreground="#FF2F2070"/>
+        <ListBox x:Name="trendsList" x:FieldModifier="public" HorizontalAlignment="Left" Height="158" Margin="24,49,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" FontSize="13" Foreground="Black" BorderBrush="White" Grid.Column="2" Grid.ColumnSpan="2">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.65"/>
+            </ListBox.Background>
+        </ListBox>
+        <Label Content="Trends" HorizontalAlignment="Left" Margin="24,18,0,0" VerticalAlignment="Top" Height="26" Width="60" Foreground="#FF2F2070" FontSize="13" FontWeight="Bold" RenderTransformOrigin="0.567,0.577" Grid.Column="2"/>
+        <ListBox x:Name="mentionsList" x:FieldModifier="public" HorizontalAlignment="Left" Height="164" Margin="24,262,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" FontSize="13" BorderBrush="White" Grid.Column="2" Grid.ColumnSpan="2">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.65"/>
+            </ListBox.Background>
+        </ListBox>
+        <Label Content="Mentions" HorizontalAlignment="Left" Margin="24,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.55,0.538" Height="26" Width="71" Foreground="#FF2F2070" FontSize="13" FontWeight="Bold" Grid.Column="2"/>
+        <Label Content="URLs Quarantined" HorizontalAlignment="Left" Margin="378,231,0,0" VerticalAlignment="Top" Height="26" Width="120" Foreground="#FF2F2070" FontSize="13" FontWeight="Bold"/>
+        <Label Content="New Message" HorizontalAlignment="Left" Margin="134,94,0,0" VerticalAlignment="Top" Height="30" Width="103" Foreground="#FF2F2070" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="txtFileBtn" Content="Open Text File" HorizontalAlignment="Left" Margin="227,389,0,0" VerticalAlignment="Top" Width="100" Height="37" Background="#FF2F2070" Foreground="#FF7F96BD" BorderBrush="#FF38404F"/>
+        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="158" Margin="378,49,0,0" VerticalAlignment="Top" Width="450" ItemsSource="{Binding}" AutoGenerateColumns="False" HeadersVisibility="Column" BorderBrush="White" GridLinesVisibility="None" HorizontalGridLinesBrush="Black" IsReadOnly="True" Grid.ColumnSpan="2">
+            <DataGrid.RowBackground>
+                <SolidColorBrush Color="White" Opacity="0.35"/>
+            </DataGrid.RowBackground>
+            <DataGrid.Background>
+                <SolidColorBrush Color="White" Opacity="0.65"/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="80"/>
+                <DataGridTextColumn Header="Sport Centre Code" Binding="{Binding CentreCode}" Width="120"/>
+                <DataGridTextColumn Header="Incident Nature" Binding="{Binding Incident}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dataGrid2" HorizontalAlignment="Left" Height="164" Margin="378,262,0,0" VerticalAlignment="Top" Width="450" HeadersVisibility="Column" ItemsSource="{Binding}" AutoGenerateColumns="False" GridLinesVisibility="None" BorderBrush="White" IsReadOnly="True" Grid.ColumnSpan="2">
+            <DataGrid.RowBackground>
+                <SolidColorBrush Color="White" Opacity="0.35"/>
+            </DataGrid.RowBackground>
+            <DataGrid.Background>
+                <SolidColorBrush Color="White" Opacity="0.65"/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sender" Binding="{Binding Sender}" Width="190"/>
+                <DataGridTextColumn Header="URL" Binding="{Binding Url}" MinWidth="230"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image HorizontalAlignment="Left" Height="59" Margin="40,79,0,0" VerticalAlignment="Top" Width="77" Source="Res/enveloppe.png"/>
+        <Rectangle Fill="#FF2F2070" HorizontalAlignment="Left" Height="472" Margin="354,0,0,0" VerticalAlignment="Top" Width="1"/>
+
+    </Grid>
+</Window>
