@@ -1,5 +1,3 @@
-Maxime Greffe - 40430624
-
 Program can be run using ELM.exe
 
 Messages in JSON format can be found in file messages.json.
