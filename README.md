@@ -14,5 +14,5 @@ All messages must be serialised in the JSON format and written in a JSON file.
 
 ## Solution developed and output
 
-![](https://www.sedhna.com/projects/elm/elm2.png)
-![](https://www.sedhna.com/projects/elm/elm3.png)
+![](https://raw.githubusercontent.com/musevarg/Euston-Leisure/master/pic1.png)
+![](https://raw.githubusercontent.com/musevarg/Euston-Leisure/master/pic2.png)
